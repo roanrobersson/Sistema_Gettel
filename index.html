@@ -44,31 +44,43 @@
 
       <div class="container border">
         <!-- Corpo -->
-        <div class="row d-flex justify-content-between">
+        <div class="row corpo">
 
           <!-- Coluna esquerda -->
           <div class="col-md-6 border mr-auto">
-          <form>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Número de protocolo</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Número">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">E-mail</label>
+            <div class="row" style="height: 100%;">
 
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
-            </div>
-            <button type="submit" class="btn btn-primary">Consultar</button>
-          </form>
+              <h1 class="col-md-12 align-self-start text-center">Consulte seu chamado:</h1>
+
+              <div class="col-md-12 align-self-center " style="position: absolute; ">
+                <form>
+                  <div class="form-group">
+                    <label for="inputPassword">Número de protocolo</label>
+                    <input type="password" class="form-control" id="InputPassword" placeholder="Número">
+                  </div>
+                  <div class="form-group">
+                    <label for="inputEmail">E-mail</label>
+
+                    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="E-mail">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Consultar</button>
+                </form>
+              </div>
+
+          </div>
+
         </div>
 
         <!-- Coluna direita -->
         <div class="col-md-6 border ml-auto">
+          <div class="row align-items-center justify-content-center" style="height: 100%;">
+            <div class="col-md-auto">
 
-            <button type="submit" class="btn btn-primary">Novo chamado</button>
+              <button type="submit" class="btn btn-primary">Novo chamado</button>
 
+            </div>
+          </div>
         </div>
-
       </div>
 
 
