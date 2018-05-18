@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family:'Open Sans', Arial, sans-serif;
 }
 
 body {
@@ -10,4 +11,30 @@ body {
 
 .corpo{
   min-height: 500px;
+}
+
+.bottom {
+  margin-top: 50px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+}
+
+.espacoEmBranco{
+  height: 1rem;
+}
+
+/*============== Colors ==============*/
+
+.white {
+  color: white;
+}
+
+.bg-azulGettel{
+  background-color: #3e4095;
+}
+
+.bg-azulGettel_light{
+  background-color: #ededf7;
 }
