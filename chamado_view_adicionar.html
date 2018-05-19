@@ -39,22 +39,22 @@
 
 
 
-<div class="container">
+  <div class="container">
 
     <form class="form-horizontal">
       <h3>Informações pessoais</h3>
       <hr>
 
       <div class="form-group row">
-        <label class="col-sm-2 control-label text-right" for="exampleFormControlInput1">Nome completo</label>
+        <label class="col-sm-2 control-label text-right" for="inputNome">Nome completo</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nome e sobrenome">
+          <input type="text" class="form-control" id="inputNome" placeholder="Nome e sobrenome">
         </div>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2 control-label text-right" for="exampleFormControlInput1">E-mail</label>
+        <label class="col-sm-2 control-label text-right" for="inputEmail">E-mail</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          <input type="text" class="form-control" id="inputEmail" placeholder="nome@exemplo.com">
         </div>
       </div>
       <div class="blank-space">
@@ -65,16 +65,16 @@
       <hr>
 
       <div class="form-group row">
-        <label class="col-sm-2 control-label text-right" for="exampleFormControlInput1">Assunto</label>
+        <label class="col-sm-2 control-label text-right" for="inputAssunto">Assunto</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Assunto">
+          <input type="text" class="form-control" id="inputAssunto" placeholder="Assunto">
         </div>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2 control-label text-right"  for="exampleFormControlSelect1">Categoria</label>
+        <label class="col-sm-2 control-label text-right"  for="selectCategoria">Categoria</label>
         <div class="col-sm-10">
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
+          <select class="form-control" id="selectCategoria">
+            <option>Internet lenta</option>
             <option>2</option>
             <option>3</option>
             <option>4</option>
@@ -83,24 +83,29 @@
         </div>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2 control-label text-right" for="exampleFormControlTextarea1">Mensagem</label>
+        <label class="col-sm-2 control-label text-right" for="txtAreaMensagem">Mensagem</label>
         <div class="col-sm-10">
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="12"></textarea>
+          <textarea class="form-control" id="txtAreaMensagem" rows="12"></textarea>
         </div>
       </div>
-      <button type="button" class="btn btn-secondary">Enviar chamado</button>
+      <div class="form-group row">
+        <div class="col-sm-10 offset-sm-2">
+          <button type="button" class="btn btn-secondary">Enviar chamado</button>
+        </div>
+      </div>
     </form>
-</div>
+  </div>
 
 
-      <!-- Footer -->
-      <div class="bottom">
-        <div class="container" style="height: 60px;">
-          <div class="rodape text-center white" >
-                Gettel Internet LTDA
-          </div>
+    <!-- Footer -->
+    <div class="bottom bg-blueGettel">
+      <div class="row align-items-center justify-content-center" style="height: 60px;">
+
+        <div class="col-md-auto white" >
+              <h5>Gettel Internet LTDA</h5>
         </div>
       </div>
+    </div>
 
 
 
