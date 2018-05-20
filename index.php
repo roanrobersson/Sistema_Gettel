@@ -1,5 +1,6 @@
 <?php
 
+
   $link = mysqli_connect(
     "ads.ideau.com.br", "uProjetoIDEAU",
     "Pr0j3t0IDEAUA!B@C#", "dbRoan"
@@ -13,6 +14,10 @@
     if ($a=="b") $acao = 'buscar';
   }
 
+  echo '$_GET = '; var_dump($_GET);
+  echo '<br>';
+  echo '$_POST = '; var_dump($_POST);
+
   if ($acao=="vazio") {
     require 'chamado_view_inicial.php';
   }
@@ -22,7 +27,7 @@
   }
 
   if ($acao=="buscar") {
-    require 'chamado_controler_buscar.php';
+    require 'chamado_controller_buscar.php';
   }
 
 
