@@ -25,6 +25,12 @@ body {
   height: 1rem;
 }
 
+.msgErro{
+  text-align: center;
+  background-color: red;
+  color: white;
+
+}
 /*============== Colors ==============*/
 
 .white {
