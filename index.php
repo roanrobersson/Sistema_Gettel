@@ -1,10 +1,11 @@
 <?php
 
-
   $link = mysqli_connect(
     "ads.ideau.com.br", "uProjetoIDEAU",
     "Pr0j3t0IDEAUA!B@C#", "dbRoan"
   );
+
+  mysqli_set_charset($link, 'utf8');
 
   $acao = 'vazio';
 
@@ -14,10 +15,15 @@
     if ($a=="b") $acao = 'buscar';
   }
 
+  /*
+  echo '<br>';
   echo '$_GET = '; var_dump($_GET);
   echo '<br>';
   echo '$_POST = '; var_dump($_POST);
-
+  echo '<br>';
+  echo '<br>';
+  */
+  
   if ($acao=="vazio") {
     require 'chamado_view_inicial.php';
   }

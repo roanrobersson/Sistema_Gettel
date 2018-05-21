@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Icone Gettel -->
@@ -27,7 +27,7 @@
       <div class="collapse navbar-collapse col-md-9 justify-content-end" id="navbarText">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Voltar</a>
+            <a class="nav-link" href="?">Sair</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="loginAdministrador.html">Entrar como administrador</a>
