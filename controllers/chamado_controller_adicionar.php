@@ -19,13 +19,14 @@
 
       //require_once 'models/Chamado_model.php';
       //$chamado = new Chamado($link);
-
+    }
   }
 
   require_once 'models/CategoriaChamado_model.php';
   $CategoriaChamado = new CategoriaChamado($link);
-  echo 'ROANNNNNNN' . var_dump($categorias);
+
   $categorias = $CategoriaChamado->carregarTodas();
 
-  include 'chamado_view_adicionar.php'
+  include 'views/chamado_view_adicionar.php'
+
 ?>

@@ -28,11 +28,11 @@
                   <input type="hidden" name="a" value="b">
                   <div class="form-group">
                     <label for="protocolo">Número de protocolo</label>
-                    <input type="text" class="form-control" name="p" id="protocolo" placeholder="Número"required="required">
+                    <input type="text" class="form-control" name="p" id="protocolo" placeholder="Número"required="required" maxlength="11">
                   </div>
                   <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" class="form-control" name="e" id="email" placeholder="E-mail" required="required">
+                    <input type="email" class="form-control" name="e" id="email" placeholder="E-mail" required="required" maxlength="45">
                   </div>
                   <input type="submit" class="btn btn-primary" value="Consultar">
                 </form>
@@ -50,7 +50,7 @@
 
               <div class="col-md-12 text-center position-relative">
 
-                <a href="chamado_view_adicionar.php"> <button type="button" name="button" class="btn btn-primary">Novo chamado</button></a>
+                <a href="?a=a"> <button type="button" name="button" class="btn btn-primary">Novo chamado</button></a>
 
               </div>
 

@@ -12,7 +12,7 @@
           $chamado->carregar($protocolo);
 
           $mensagens = $chamado->get_mensagens();
-          require 'chamado_view_buscar.php';
+          require 'views/chamado_view_buscar.php';
 
 
       }else {

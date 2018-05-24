@@ -47,10 +47,11 @@ class CategoriaChamado{
 
 
   function carregarTodas(){
-    $sql = "SELECT * FROM CategoriaChamado";
-    $query = mysqli_query($this->link, $sql);
-    $registro = mysqli_fetch_array($query);
-    
+    $sql = "SELECT * FROM CategoriaChamado
+            ORDER BY (idCategoria)";
+    $qry = mysqli_query($this->link, $sql);
+    $resultado = array();
+
     while( $registro = mysqli_fetch_array($qry))
     {
       $resultado[] = $registro;

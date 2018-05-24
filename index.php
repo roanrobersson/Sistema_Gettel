@@ -23,17 +23,17 @@
   echo '<br>';
   echo '<br>';
   */
-  
+
   if ($acao=="vazio") {
-    require 'chamado_view_inicial.php';
+    require 'views/chamado_view_inicial.php';
   }
 
   if ($acao=="adicionar") {
-    require 'chamado_controller_adicionar.php';
+    require 'controllers/chamado_controller_adicionar.php';
   }
 
   if ($acao=="buscar") {
-    require 'chamado_controller_buscar.php';
+    require 'controllers/chamado_controller_buscar.php';
   }
 
 
