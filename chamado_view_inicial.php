@@ -50,10 +50,7 @@
 
               <div class="col-md-12 text-center position-relative">
 
-                <form method="get" action="">
-                  <input type="submit" class="btn btn-primary" value="Novo chamado">
-                </form>
-
+                <a href="chamado_view_adicionar.php"> <button type="button" name="button" class="btn btn-primary">Novo chamado</button></a>
 
               </div>
 

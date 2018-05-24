@@ -6,17 +6,19 @@
 class Mensagem
 {
   protected $link;
+
   protected $idMensagem;
   protected $texto;
   protected $dtMensagem;
-  protected $Chamado; #Objeto da classe Chamado
-  protected $Usuario; #Objeto da classe Usuario
+  protected $nmUsuario;
 
   function __construct($linkGlobal){
     $this->link = $linkGlobal;
   }
 
+  /*
   function carrega($id){
+
     $sql = "SELECT * FROM Mensagem WHERE idMensagem = $id";
     $query = mysqli_query($this->link, $sql);
     $registro = mysqli_fetch_array($query);
@@ -30,6 +32,7 @@ class Mensagem
     $this->Usuario = new Usuario($link);
     $this->Usuario->carregar($registro['idUsuario']);
   }
+  */
 
   /**
    * Getters
@@ -69,9 +72,15 @@ class Mensagem
     $this->dtMensagem = $dt;
   }
 
+
   function carregarTodas($idChamado){
     $sql = "SELECT * FROM Mensagem
-            WHERE idChamado = '$idChamado'";
+            JOIN Usuario ON Mensagem.idUsuario = Usuario.idUsuario
+            LEFT JOIN UsuarioCliente ON Usuario.idUsuario = UsuarioCliente.idCliente
+            LEFT JOIN UsuarioFuncionario ON Usuario.idUsuario = UsuarioFuncionario.idFuncionario
+            WHERE idChamado = '$idChamado'
+            ORDER BY (dtMensagem);
+            ";
     $qry = mysqli_query($this->link, $sql);
     $resultado = array();
 

@@ -13,6 +13,7 @@ class CategoriaChamado{
     $this->link = $linkGlobal;
   }
 
+  /*
   function carregar($id){
     $sql = "SELECT * FROM CategoriaChamado WHERE idCategoria = $id";
     $query = mysqli_query($this->link, $sql);
@@ -20,6 +21,7 @@ class CategoriaChamado{
     $this->set_idCategoria($registro['idCategoria']);
     $this->set_dsCategoria($registro['dsCategoria']);
   }
+  /*
 
   /**
    * Getters
@@ -42,6 +44,21 @@ class CategoriaChamado{
   function set_idCategoria($id){
     $this->idCategoria = $id;
   }
+
+
+  function carregarTodas(){
+    $sql = "SELECT * FROM CategoriaChamado";
+    $query = mysqli_query($this->link, $sql);
+    $registro = mysqli_fetch_array($query);
+    
+    while( $registro = mysqli_fetch_array($qry))
+    {
+      $resultado[] = $registro;
+    }
+
+    return $resultado;
+  }
+
 
 }
 

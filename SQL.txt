@@ -1,0 +1,13 @@
+## SQL PARA CONSULTAR CHAMADO ##
+
+$sql = "SELECT * FROM Chamado
+JOIN CategoriaChamado ON Chamado.idCategoria = CategoriaChamado.idCategoria
+JOIN UsuarioCliente ON idUsuarioCriador = UsuarioCliente.idCliente
+JOIN Usuario ON UsuarioCliente.idCliente= Usuario.idUsuario
+WHERE idChamado = '$id'";
+
+
+## SQL PARA  ##
+
+$sql = "SELECT * FROM Mensagem
+            WHERE idChamado = '$idChamado'";	

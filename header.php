@@ -18,7 +18,7 @@
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div class="col-md-3">
-        <a class="navbar-brand" href="index.html"><img src="img/logo_gettel_azul.png" alt="Logo Gettel" height="40px"> </a>
+        <a class="navbar-brand" href="index.php"><img src="img/logo_gettel_azul.png" alt="Logo Gettel" height="40px"> </a>
 
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
             <a class="nav-link" href="?">Sair</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="loginAdministrador.html">Entrar como administrador</a>
+            <a class="nav-link" href="loginAdministrador.php">Entrar como administrador</a>
           </li>
         </ul>
       </div>

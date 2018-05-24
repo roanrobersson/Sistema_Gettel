@@ -10,9 +10,12 @@ class Chamado{
   protected $idChamado;
   protected $dtChamado;
   protected $assunto;
-  protected $CategoriaChamado; #Objeto da classe CategoriaChamado
+  protected $dsCategoria;
   protected $dtResolucao;
+  protected $idUsuario;
+  protected $nmUsuario;
   protected $mensagens;
+  protected $countMensagens;
 
   function __construct($linkGlobal)
   {
@@ -27,57 +30,94 @@ class Chamado{
   }
 
   function get_dtChamado(){
-   return $this->dtChamado;
+    return $this->dtChamado;
   }
 
   function get_assunto(){
-   return $this->assunto;
+    return $this->assunto;
   }
 
   function get_dtResolucao(){
-   return $this->dtResolucao;
+    return $this->dtResolucao;
   }
 
   function get_dsCategoria(){
-    return $this->CategoriaChamado->get_dsCategoria();
+    return $this->dsCategoria;
+  }
+
+  function get_idUsuario(){
+    return $this->idUsuario;
+  }
+
+  function get_nmUsuario(){
+    return $this->nmUsuario;
   }
 
   function get_mensagens(){
     return $this->mensagens;
   }
 
+  function get_countMensagens(){
+    return $this->countMensagens;
+  }
+
   /**
   * Setters
   */
   function set_idChamado($id){
-   $this->idChamado = $id;
+    $this->idChamado = $id;
   }
 
   function set_dtChamado($dtC){
-   $this->dtChamado = $dtC;
+    $this->dtChamado = $dtC;
   }
 
   function set_assunto($a){
-   $this->assunto = $a;
+    $this->assunto = $a;
+  }
+
+  function set_dsCategoria($dsC){
+    $this->dsCategoria = $dsC;
+  }
+
+  function set_idUsuario($idU){
+    $this->idUsuario = $idU;
+  }
+
+  function set_nmUsuario($nmU){
+    $this->nmUsuario = $nmU;
   }
 
   function set_dtResolucao($dtR){
-   $this->dtResolucao = $dtR;
+    $this->dtResolucao = $dtR;
   }
 
+  function set_countMensagens($cM){
+    $this->countMensagens = $cM;
+  }
 
   function carregar($id) {
-   $sql = "SELECT * FROM Chamado WHERE idChamado = $id";
-   $query = mysqli_query($this->link, $sql);
-   $registro = mysqli_fetch_array($query);
-   $this->set_idChamado($registro['idChamado']);
-   $this->set_dtChamado($registro['dtChamado']);
-   $this->set_assunto($registro['assunto']);
-   $this->CategoriaChamado = new CategoriaChamado($this->link);
-   $this->CategoriaChamado->carregar($registro['idCategoria']);
-   $mensagem = new Mensagem($this->link);
-   $this->mensagens = $mensagem->carregarTodas($this->get_idChamado());
-   $this->set_dtResolucao($registro['dtResolucao']);
+    $sql = "SELECT *, COUNT(*) AS countMensagens FROM Chamado
+    JOIN CategoriaChamado ON Chamado.idCategoria = CategoriaChamado.idCategoria
+    JOIN UsuarioCliente ON idUsuarioCriador = UsuarioCliente.idCliente
+    JOIN Usuario ON UsuarioCliente.idCliente= Usuario.idUsuario
+    JOIN Mensagem ON Chamado.idChamado = Mensagem.idChamado
+    WHERE Chamado.idChamado = '$id'
+    GROUP BY (Chamado.idChamado)";
+
+    $query = mysqli_query($this->link, $sql);
+    $registro = mysqli_fetch_array($query);
+
+    $this->set_idChamado($registro['idChamado']);
+    $this->set_dtChamado($registro['dtChamado']);
+    $this->set_assunto($registro['assunto']);
+    $this->set_dsCategoria($registro['dsCategoria']);
+    $this->set_idUsuario($registro['idUsuario']);
+    $this->set_nmUsuario($registro['nmUsuario']);
+    $this->set_dtResolucao($registro['dtResolucao']);
+    $this->set_countMensagens($registro['countMensagens']);
+    $mensagem = new Mensagem($this->link);
+    $this->mensagens = $mensagem->carregarTodas($this->get_idChamado());
   }
 
   function chamado_existe ($p, $e){

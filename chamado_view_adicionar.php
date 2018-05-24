@@ -39,11 +39,16 @@
         <label class="col-sm-2 control-label text-right"  for="selectCategoria">Categoria</label>
         <div class="col-sm-10">
           <select class="form-control" id="selectCategoria">
-            <option>Internet lenta</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+
+            <?php foreach ($categorias as $c): ?>
+              <option><?php echo $c['dsCategoria'] ?></option>
+            <?php endforeach; ?>
+
+
+
+
+
+
           </select>
         </div>
       </div>

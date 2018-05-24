@@ -10,9 +10,9 @@
       $chamado = new Chamado($link);
       if($chamado->chamado_existe($protocolo, $email)){
           $chamado->carregar($protocolo);
-          $mensagens = $chamado->get_mensagens();
 
-        require 'chamado_view_buscar.php';
+          $mensagens = $chamado->get_mensagens();
+          require 'chamado_view_buscar.php';
 
 
       }else {

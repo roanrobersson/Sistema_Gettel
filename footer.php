@@ -2,7 +2,7 @@
 <div class="bottom bg-blueGettel">
   <div class="row align-items-center justify-content-center" style="height: 60px;">
 
-    <div class="col-md-auto white" >
+    <div class="col- white" >
           <h5>Gettel Internet LTDA</h5>
     </div>
   </div>
