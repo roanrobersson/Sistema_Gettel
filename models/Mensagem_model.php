@@ -11,6 +11,7 @@ class Mensagem
   protected $texto;
   protected $dtMensagem;
   protected $nmUsuario;
+  protected $idUsuario;
 
   function __construct($linkGlobal){
     $this->link = $linkGlobal;
@@ -72,6 +73,14 @@ class Mensagem
     $this->dtMensagem = $dt;
   }
 
+  function criarMensagem($texto, $idChamado, $idUsuario){
+    $sql = "INSERT INTO Mensagem(texto, dtMensagem, idChamado, idUsuario)
+            VALUES
+            ('$texto', current_timestamp(), '$idChamado', '$idUsuario');
+            ";
+    $qry = mysqli_query($this->link, $sql);
+    $resultado = array();
+  }
 
   function carregarTodas($idChamado){
     $sql = "SELECT * FROM Mensagem

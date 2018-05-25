@@ -1,6 +1,7 @@
 <?php
   require_once 'CategoriaChamado_model.php';
   require_once 'Mensagem_model.php';
+  require_once 'UsuarioCliente_Model.php';
 /**
  * Chamado
  */
@@ -12,7 +13,6 @@ class Chamado{
   protected $assunto;
   protected $dsCategoria;
   protected $dtResolucao;
-  protected $idUsuario;
   protected $nmUsuario;
   protected $mensagens;
   protected $countMensagens;
@@ -96,6 +96,33 @@ class Chamado{
     $this->countMensagens = $cM;
   }
 
+  function criarChamado($nmUsuario, $email, $assunto, $idCategoria, $texto){
+
+    $UsuarioCliente = new UsuarioCliente($this->link);
+    $idUsuarioCriador = $UsuarioCliente-> criarUsuarioCliente($nmUsuario, $email);
+
+    $idChamadoGerado = rand(11111, 99999); //Adicionar gerador de ID aleatorio
+
+    $sql = "INSERT INTO Chamado(idChamado, dtChamado, assunto, idCategoria, idUsuarioCriador )
+            VALUES
+            ('$idChamadoGerado',
+             current_timestamp(),
+             '$assunto',
+             '$idCategoria',
+             '$idUsuarioCriador');
+             ";
+    $query = mysqli_query($this->link, $sql);
+
+    $Mensagem  = new Mensagem($this->link);
+    $Mensagem->criarMensagem($texto, $idChamadoGerado, $idUsuarioCriador);
+
+    return $idChamadoGerado;
+
+  }
+
+
+
+
   function carregar($id) {
     $sql = "SELECT *, COUNT(*) AS countMensagens FROM Chamado
     JOIN CategoriaChamado ON Chamado.idCategoria = CategoriaChamado.idCategoria
@@ -116,8 +143,8 @@ class Chamado{
     $this->set_nmUsuario($registro['nmUsuario']);
     $this->set_dtResolucao($registro['dtResolucao']);
     $this->set_countMensagens($registro['countMensagens']);
-    $mensagem = new Mensagem($this->link);
-    $this->mensagens = $mensagem->carregarTodas($this->get_idChamado());
+    $Mensagem = new Mensagem($this->link);
+    $this->mensagens = $Mensagem->carregarTodas($this->get_idChamado());
   }
 
   function chamado_existe ($p, $e){

@@ -1,4 +1,16 @@
 <?php
+  if(isset($_POST)) {
+    if( isset($_POST['texto']) ) {
+
+      $texto = $_POST['texto'];
+
+      //$Chamado = new Chamado($this->link);
+      //$Chamado->criarMensagem($texto, $idChamado, $idUsuarioCriador);
+      /*
+      ESTAVA ARRUMANDO AQUI
+      */
+    }
+  }
 
   if (isset($_GET)){
     if( isset($_GET['p']) AND isset($_GET['e']) ) {
@@ -14,16 +26,15 @@
           $mensagens = $chamado->get_mensagens();
           require 'views/chamado_view_buscar.php';
 
-
-      }else {
+      } else{
         header('Location: index.php?error=register_not_found');
       }
 
-    }else{
+    } else{
       header('Location: index.php');
     }
 
-  }else{
+  } else{
     header('Location: index.php');
   }
 

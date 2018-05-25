@@ -26,11 +26,14 @@
       </button>
       <div class="collapse navbar-collapse col-md-9 justify-content-end" id="navbarText">
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Início</a>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="?">Sair</a>
+            <a class="nav-link" href="loginAdministrador.php">Entrar como administrador</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="loginAdministrador.php">Entrar como administrador</a>
+            <a class="nav-link" href="?">Sair</a>
           </li>
         </ul>
       </div>

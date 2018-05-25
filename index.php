@@ -15,14 +15,14 @@
     if ($a=="b") $acao = 'buscar';
   }
 
-  /*
+  
   echo '<br>';
   echo '$_GET = '; var_dump($_GET);
   echo '<br>';
   echo '$_POST = '; var_dump($_POST);
   echo '<br>';
   echo '<br>';
-  */
+
 
   if ($acao=="vazio") {
     require 'views/chamado_view_inicial.php';

@@ -39,7 +39,7 @@
 
           </div>
         </div>
-      </div>
+
 
 
       <!-- Mensagem -->
@@ -60,6 +60,29 @@
           </div>
         </div>
       <?php endforeach; ?>
+
+      <div class="blank-space"></div>
+
+      <form action="" method="POST">
+        <div class="form-group row">
+
+          <div class="col-md-10 offset-md-2">
+            <label class="control-label text-right" for="texto">Nova mensagem:</label>
+          </div>
+          <div class="col-md-9 offset-md-3">
+            <textarea class="form-control" name="texto" id="texto" rows="5" maxlength="2000" required></textarea>
+          </div>
+
+          <div class="blank-space"></div>
+
+          <div class="col-md-9 offset-md-3">
+            <input type="submit" class="btn btn-primary" value="Enviar">
+          </div>
+
+        </div>
+
+      </form>
+</div>
 
 
 
