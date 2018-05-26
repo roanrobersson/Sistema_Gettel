@@ -15,6 +15,8 @@
 
         if ( $idUsuarioLogado != "" ) {
           $_SESSION['idUsuario'] = $idUsuarioLogado;
+      } else{
+        header('Location: ?a=adm&error=account_not_found');
       }
 
     }
