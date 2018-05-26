@@ -1,47 +1,58 @@
 <?php
+  ini_set('session.cookie_lifetime', 3600); // Tempo que a conta vai permanecer logada
   session_start();
-?>
 
+  if (isset($_POST)) {
+    if (isset($_POST['login']) AND
+        isset($_POST['senha'])){
 
-    <?php
+        $login = $_POST['login'];
+        $senha = $_POST['senha'];
 
-      if (isset($_POST)) {
-        if (isset($_POST['login']) AND
-            isset($_POST['senha'])) {
+        require_once 'models/UsuarioFuncionario_Model.php';
+        $UsuarioFuncionario = new UsuarioFuncionario($link);
+        $idUsuarioLogado = $UsuarioFuncionario->validarLogin($login, $senha);
 
-          $_SESSION['usuario'] = $_POST['login'];
-
-        }
-        else if (isset($_POST['a'])) {
-          if ($_POST['a'] == "deslogar"){
-            unset($_SESSION['usuario']);
-          }
-        }
+        if ( $idUsuarioLogado != "" ) {
+          $_SESSION['idUsuario'] = $idUsuarioLogado;
       }
 
+    }
+    else if (isset($_GET['f'])) {
+      if ($_GET['f'] == "logout"){
+        unset($_SESSION['idUsuario']);
+      }
+    }
+  }
 
+  $idUsuarioLogado = "";
 
-      $usuario = "";
-      if (isset($_SESSION)) {
-        if (isset($_SESSION['usuario'])) {
-          $usuario = $_SESSION['usuario'];
-        }
+  //Se existir um cookie e seu usuario existir
+  if (isset($_SESSION)) {
+    if (isset($_SESSION['idUsuario'])) {
+      $id = $_SESSION['idUsuario'];
+
+      require_once 'models/UsuarioFuncionario_Model.php';
+      $UsuarioFuncionario = new UsuarioFuncionario($link);
+      if ( $UsuarioFuncionario->usuarioExiste($id) ){
+        $idUsuarioLogado = $id;
       }
 
-      if ($usuario == "") {
-        // nao fez login
-        require 'views/chamado_view_adm_login.php';
+    }
+  }
+
+  //Se o usuario nao logou
+  if ($idUsuarioLogado == "") {
+
+    require 'views/chamado_view_adm_login.php';
+
+  //Se o usuario logou
+  } else {
+
+    require 'views/chamado_view_adm_lista.php';
+
+  }
 
 
 
-      } else {
-        // se tem usuario, entao ele fez login
-        echo "Bem vindo, ".$usuario;
-        ?>
-        <form class="" action="exemplocomsession.php" method="POST">
-          <input type="submit" name="a" value="deslogar">
-        </form>
-        <?php
-      }
-
-      ?>
+  ?>

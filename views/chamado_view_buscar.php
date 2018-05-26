@@ -6,9 +6,9 @@
       <!-- Corpo header-->
       <div class="container">
 
-        <h2 class="numProtocolo" style="text-align: center; padding-top: 1rem; padding-bottom: 1rem;">
+        <h1 class="numProtocolo" style="text-align: center; padding-top: 1rem; padding-bottom: 1rem;">
         Chamado: <?php echo $chamado->get_idChamado()?>
-        </h2>
+        </h1>
 
         <div class="blank-space"></div>
 

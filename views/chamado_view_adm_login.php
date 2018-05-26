@@ -1,9 +1,9 @@
 <?php include 'header.php' ?>
 
 
-  <h2 class="numProtocolo" style="text-align: center; padding-top: 1rem; padding-bottom: 1rem;">
+  <h1 class="numProtocolo" style="text-align: center; padding-top: 1rem; padding-bottom: 1rem;">
   Entrando como administrador.
-  </h2>
+</h1>
 
   <div class="container">
     <!-- Corpo -->
@@ -16,7 +16,7 @@
 
           <div class="col-md-5 ">
 
-            <form method="POST" action="chamado_controller_administrar.php">
+            <form method="POST" action="">
               <input type="hidden" name="a" value="b">
               <div class="form-group">
                 <label for="login">Login</label>

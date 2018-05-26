@@ -30,10 +30,14 @@
             <a class="nav-link" href="index.php">Início</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?a=adm">Entrar como administrador</a>
+            <?php if ( isset($idUsuarioLogado) AND $idUsuarioLogado != ""){ ?>
+                <a class="nav-link" href="?a=adm&f=logout">Deslogar</a>
+            <?php }else{ ?>
+                <a class="nav-link" href="?a=adm">Entrar como administrador</a>
+              <?php } ?>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="?">Sair</a>
+            <a class="nav-link" href="http://www.gettel.com.br">Ir para o site</a>
           </li>
         </ul>
       </div>

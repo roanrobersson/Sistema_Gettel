@@ -4,7 +4,7 @@
 /**
  * UsuarioFuncionario
  */
-class UsuarioCliente extends Usuario
+class UsuarioFuncionario extends Usuario
 {
   protected $login;
   protected $senha;
@@ -35,6 +35,28 @@ class UsuarioCliente extends Usuario
 
   }
 
+  //Implementacao de classe abstrata
+  function usuarioExiste($id){
+    $sql = "SELECT * FROM UsuarioFuncionario
+            WHERE idFuncionario = '$id';
+           ";
+    $query = mysqli_query($this->link, $sql);
+    $result = mysqli_fetch_array($query);
+    if ( $result ){
+       return true;
+     }else return false;
+  }
+
+  function validarLogin($login, $senha){
+    $sql = "SELECT * FROM UsuarioFuncionario
+            WHERE login = '$login' AND senha = '$senha';
+           ";
+    $query = mysqli_query($this->link, $sql);
+    $result = mysqli_fetch_array($query);
+    if ( $result ){
+       return $result['idFuncionario'];
+     }else return "";
+  }
 
 }
 

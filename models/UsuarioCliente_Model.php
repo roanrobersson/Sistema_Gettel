@@ -43,6 +43,10 @@ class UsuarioCliente extends Usuario
 
   }
 
+  //Implementacao de classe abstrata
+  function usuarioExiste($id){
+
+  }
 
 }
 

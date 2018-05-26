@@ -40,7 +40,7 @@ abstract class Usuario
     $this->nmUsuario = $nmU;
   }
 
-
+  abstract function usuarioExiste($id);
 }
 
 ?>
