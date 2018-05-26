@@ -29,8 +29,8 @@
           <li class="nav-item">
             <a class="nav-link" href="index.php">Início</a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="loginAdministrador.php">Entrar como administrador</a>
+          <li class="nav-item">
+            <a class="nav-link" href="?a=adm">Entrar como administrador</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="?">Sair</a>

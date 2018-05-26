@@ -13,6 +13,7 @@
     $a = $_GET['a'];
     if ($a=="a") $acao = 'adicionar';
     if ($a=="b") $acao = 'buscar';
+    if ($a=='adm') $acao = 'administrar';
   }
 
   echo '<br>';
@@ -32,6 +33,10 @@
 
   if ($acao=="buscar") {
     require 'controllers/chamado_controller_buscar.php';
+  }
+
+  if ($acao=="administrar") {
+    require 'controllers/chamado_controller_administrar.php';
   }
 
 
