@@ -1,19 +1,25 @@
 <?php
   if(isset($_POST)) {
-    if( isset($_POST['texto']) ) {
+    if( isset($_POST['texto']) AND
+        isset($_POST['idUsuario']) AND
+        isset($_POST['idChamado'])
+      ) {
 
       $texto = $_POST['texto'];
+      $idUsuario = $_POST['idUsuario'];
+      $idChamado = $_POST['idChamado'];
 
-      //$Chamado = new Chamado($this->link);
-      //$Chamado->criarMensagem($texto, $idChamado, $idUsuarioCriador);
-      /*
-      ESTAVA ARRUMANDO AQUI
-      */
+      require_once 'models/Mensagem_model.php';
+      $Mensagem = new Mensagem($link);
+      $Mensagem->criarMensagem($texto, $idChamado, $idUsuario);
+
+
     }
   }
 
   if (isset($_GET)){
-    if( isset($_GET['p']) AND isset($_GET['e']) ) {
+    if( isset($_GET['p']) AND
+        isset($_GET['e']) ) {
 
       $protocolo = $_GET['p'];
       $email = $_GET['e'];

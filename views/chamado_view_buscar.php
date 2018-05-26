@@ -52,8 +52,8 @@
                   <a href="mailto:<?php echo $m['email']?>"><?php echo $m['email']?></a>
               </div>
               <div class="col-md-9" >
-                <p style="text-align: right;"><?php echo date('d/m/Y H:i:s', strtotime($m['dtMensagem']));?></p>
-                <hr>
+                <p style="text-align: right; margin-bottom: 0; margin-top: 0;" ><?php echo date('d/m/Y H:i:s', strtotime($m['dtMensagem']));?></p>
+                <hr style="margin-top: 0;">
                 <p style="font-weight: bold;">Mensagem:</p>
                 <p><?php echo $m['texto']?></p>
               </div>
@@ -64,10 +64,13 @@
       <div class="blank-space"></div>
 
       <form action="" method="POST">
+        <input type="hidden" name="idChamado" value="<?php echo $chamado->get_idChamado(); ?>">
+        <input type="hidden" name="idUsuario" value="<?php echo $chamado->get_idUsuario(); ?>">
+
         <div class="form-group row">
 
           <div class="col-md-10 offset-md-2">
-            <label class="control-label text-right" for="texto">Nova mensagem:</label>
+            <label class="control-label text-right" for="texto" style="font-weight: bold;">Nova mensagem:</label>
           </div>
           <div class="col-md-9 offset-md-3">
             <textarea class="form-control" name="texto" id="texto" rows="5" maxlength="2000" required></textarea>

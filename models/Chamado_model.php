@@ -101,7 +101,7 @@ class Chamado{
     $UsuarioCliente = new UsuarioCliente($this->link);
     $idUsuarioCriador = $UsuarioCliente-> criarUsuarioCliente($nmUsuario, $email);
 
-    $idChamadoGerado = rand(11111, 99999); //Adicionar gerador de ID aleatorio
+    $idChamadoGerado = $this->gerarIdChamado();
 
     $sql = "INSERT INTO Chamado(idChamado, dtChamado, assunto, idCategoria, idUsuarioCriador )
             VALUES
@@ -120,7 +120,25 @@ class Chamado{
 
   }
 
+  private function gerarIdChamado(){
+    while (true){
+      $id = rand(100000000, 999999999);
 
+      $sql = "SELECT * FROM Chamado
+              WHERE idChamado = '$id';
+              ";
+
+      $query = mysqli_query($this->link, $sql);
+      $result = mysqli_fetch_array($query);
+
+      if ( !$result ){
+        $array = str_split($id, 3);
+        $id = implode("-", $array);
+        return $id;
+      }
+
+    }
+  }
 
 
   function carregar($id) {
