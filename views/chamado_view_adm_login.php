@@ -27,7 +27,7 @@
 
           <div class="col-md-5 ">
 
-            <form method="POST" action="">
+            <form method="POST" action="?a=adm&o=lc">
               <input type="hidden" name="a" value="b">
               <div class="form-group">
                 <label for="login">Login</label>

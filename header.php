@@ -31,7 +31,7 @@
           </li>
           <li class="nav-item">
             <?php if ( isset($idUsuarioLogado) AND $idUsuarioLogado != ""){ ?>
-                <a class="nav-link" href="?a=adm&f=logout">Deslogar</a>
+                <a class="nav-link" href="?a=adm&o=lo">Deslogar</a>
             <?php }else{ ?>
                 <a class="nav-link" href="?a=adm">Entrar como administrador</a>
               <?php } ?>

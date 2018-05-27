@@ -10,12 +10,12 @@
 
   <!-- Corpo-->
   <div class="container">
-    <div class="row">
+    <div class="row corpo">
 
 
 
       <?php foreach ($chamados as $c): ?>
-          <a href="?a=adm&p=<?php echo $c['idChamado']?>" class="col-md-12 col-lg-4" style="overflow: hidden;">
+          <a href="?a=adm&o=lm&p=<?php echo $c['idChamado']?>" class="col-md-12 col-lg-4" style="overflow: hidden;">
             <button type="button" class="btn btn-primary" style=" margin: 1rem; padding: 1rem; width: 100%;">
               <h2><?php echo $c['idChamado']; ?></h2>
               <p>Assunto: <?php echo $c['assunto']; ?></p>
