@@ -178,7 +178,22 @@ class Chamado{
 
   }
 
+  function carregarTodos(){
+    $sql = "SELECT * FROM Chamado
+            JOIN UsuarioCliente ON Chamado.idUsuarioCriador = UsuarioCliente.idCliente
+            JOIN Usuario ON UsuarioCliente.idCliente = Usuario.idUsuario
+            ORDER BY (dtResolucao);
+            ";
+    $qry = mysqli_query($this->link, $sql);
+    $resultado = array();
 
+    while( $registro = mysqli_fetch_array($qry))
+    {
+      $resultado[] = $registro;
+    }
+
+    return $resultado;
+  }
 
 
 

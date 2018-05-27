@@ -58,6 +58,16 @@ class UsuarioFuncionario extends Usuario
      }else return "";
   }
 
+  function pegarNomeUsuario($id){
+    $sql = "SELECT * FROM Usuario
+            WHERE idUsuario = '$id';
+           ";
+    $query = mysqli_query($this->link, $sql);
+    $result = mysqli_fetch_array($query);
+    return $result['nmUsuario'];
+  }
+
+
 }
 
 ?>

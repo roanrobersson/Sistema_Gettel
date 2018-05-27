@@ -16,6 +16,7 @@
     if ($a=='adm') $acao = 'administrar';
   }
 
+
   echo '<br>';
   echo '$_GET = '; var_dump($_GET);
   echo '<br>';

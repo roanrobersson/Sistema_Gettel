@@ -52,7 +52,7 @@
       <div class="form-group row">
         <label class="col-sm-2 control-label text-right" for="texto">Mensagem</label>
         <div class="col-sm-10">
-          <textarea class="form-control" name="texto" id="texto" rows="12" maxlength="2000" required></textarea>
+          <textarea class="form-control" name="texto" id="texto" rows="5" maxlength="2000" required></textarea>
         </div>
       </div>
       <div class="form-group row">

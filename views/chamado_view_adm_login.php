@@ -5,6 +5,17 @@
   Entrando como administrador.
 </h1>
 
+<?php if(isset($_GET))
+        if(isset($_GET['error'])) {
+          $error = $_GET['error'];
+
+          if($error = 'account_not_found  '){?>
+            <div class="msgErro">
+              <?php echo 'Login ou senha incorretos! Tente novamente.';  ?>
+            </div><?php
+          }
+        } ?>
+
   <div class="container">
     <!-- Corpo -->
     <div class="row corpo">
